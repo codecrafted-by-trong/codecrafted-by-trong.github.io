@@ -60,6 +60,12 @@
   height: auto;
 }
 
+.contact-heading-img-div img {
+  border: 5px solid #333;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
 .blog-heading-img-div > * {
   max-width: 100%;
   height: auto;

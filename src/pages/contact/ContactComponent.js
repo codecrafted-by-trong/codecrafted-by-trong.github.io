@@ -14,6 +14,9 @@ const ContactData = contactPageData.contactSection;
 const blogSection = contactPageData.blogSection;
 const addressSection = contactPageData.addressSection;
 const phoneSection = contactPageData.phoneSection;
+const contactProfileImage = ContactData.profile_image_path.startsWith("http")
+  ? ContactData.profile_image_path
+  : require(`../../assets/images/${ContactData.profile_image_path}`);
 
 class Contact extends Component {
   render() {
@@ -25,10 +28,7 @@ class Contact extends Component {
           <Fade bottom duration={1000} distance="40px">
             <div className="contact-heading-div">
               <div className="contact-heading-img-div">
-                <img
-                  src={require(`../../assets/images/${ContactData["profile_image_path"]}`)}
-                  alt=""
-                />
+                <img src={contactProfileImage} alt="" />
               </div>
               <div className="contact-heading-text-div">
                 <h1
@@ -45,11 +45,7 @@ class Contact extends Component {
                 </p>
                 <SocialMedia theme={theme} />
                 <div className="resume-btn-div">
-                  <Button
-                    text="See My Resume"
-                    href="/resume"
-                    theme={theme}
-                  />
+                  <Button text="See My Resume" href="/resume" theme={theme} />
                 </div>
               </div>
             </div>
